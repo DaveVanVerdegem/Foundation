@@ -1,0 +1,10 @@
+{
+    "name": "com.davevanverdegem.foundation",
+    "version": "0.1.0",
+    "displayName": "Foundation",
+    "description": "Foundation provides a base set of classes to kickstart new projects.",
+    "author": {
+      "name": "Dave Van Verdegem",
+      "email": "davevanverdegem@gmail.com"
+    }
+  }
