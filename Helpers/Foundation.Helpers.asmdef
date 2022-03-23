@@ -1,0 +1,16 @@
+{
+    "name": "Foundation.Helpers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6312f2ce1e3a331479958c8c765c20ed"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

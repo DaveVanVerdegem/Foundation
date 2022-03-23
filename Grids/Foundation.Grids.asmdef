@@ -1,0 +1,16 @@
+{
+    "name": "Foundation.Grids",
+    "rootNamespace": "",
+    "references": [
+        "GUID:372d6e3d23a925244a1ce7f418f444d1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
