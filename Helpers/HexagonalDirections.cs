@@ -20,7 +20,7 @@ namespace Foundation.Helpers
 		#region Methods
 		public static Vector3Int Get(int direction /* 0 to 5 */)
 		{
-			if (direction < 0 && direction >= 6)
+			if (direction < 0 || direction >= 6)
 				direction = direction.Modulo(6);
 
 			return _directions[direction];
