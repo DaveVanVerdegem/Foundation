@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added tool to create Facade file in Editor.
+
+### Fixed
+
+- Added .meta files for markdown files.
+
 ## [0.1.1] - 2022-04-26
 
 ### Added
