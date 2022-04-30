@@ -14,5 +14,20 @@ namespace Foundation.Extensions
 		{
 			return list[UnityEngine.Random.Range(0, list.Count)];
 		}
+
+		/// <summary>
+		/// Adds an item to the list only if it isn't in the list yet.
+		/// </summary>
+		/// <param name="list">List to add object to.</param>
+		/// <param name="item">Object to add.</param>
+		/// <returns>Returns true if the object could be added.</returns>
+		public static bool AddUnique(this List<T> list, T item)
+		{
+			if (list.Contains(item))
+				return false;
+
+			list.Add(item);
+			return true;
+		}
 	} 
 }

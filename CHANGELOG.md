@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2022-04-30
+
+### Added
+
+- Added list extension to add unique items to lists.
+
 ## [0.1.2] - 2022-04-29
 
 ### Added
