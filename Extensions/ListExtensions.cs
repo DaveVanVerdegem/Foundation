@@ -21,7 +21,7 @@ namespace Foundation.Extensions
 		/// <param name="list">List to add object to.</param>
 		/// <param name="item">Object to add.</param>
 		/// <returns>Returns true if the object could be added.</returns>
-		public static bool AddUnique(this List<T> list, T item)
+		public static bool AddUnique<T>(this List<T> list, T item)
 		{
 			if (list.Contains(item))
 				return false;
