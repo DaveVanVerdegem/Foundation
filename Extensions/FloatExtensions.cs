@@ -16,6 +16,16 @@ namespace Foundation.Extensions
 		{
 			return (value - minimumStartValue) / (maximumStartValue - minimumStartValue) * (maximumTargetValue - minimumTargetValue) + minimumTargetValue;
 		}
+
+		/// <summary>
+		/// Subtracts the given value from 1 (1-x).
+		/// </summary>
+		/// <param name="value">Value to subtract from 1.</param>
+		/// <returns>The remainder after subtracting.</returns>
+		public static float OneMinus(this float value)
+		{
+			return 1f - value;
+		}
 		#endregion
 	} 
 }
