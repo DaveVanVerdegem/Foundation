@@ -12,7 +12,30 @@ namespace Foundation.Extensions
 		/// <returns>Returns random object.</returns>
 		public static T Random<T>(this List<T> list)
 		{
+			if (list.Count == 0)
+				return default(T);
+
 			return list[UnityEngine.Random.Range(0, list.Count)];
+		}
+
+		/// <summary>
+		/// Returns a random object from this list.
+		/// </summary>
+		/// <typeparam name="T">Object type.</typeparam>
+		/// <param name="list">List to return random object from.</param>
+		/// <param name="exclusions">Objects that are excluded.</param>
+		/// <returns>Returns random object.</returns>
+		public static T Random<T>(this List<T> list, List<T> exclusions)
+		{
+			List<T> selectionList = new List<T>(list);
+
+			for (int i = 0; i < exclusions.Count; i++)
+				selectionList.Remove(exclusions[i]);
+
+			if(selectionList.Count == 0)
+				return default;
+
+			return selectionList[UnityEngine.Random.Range(0, selectionList.Count)];
 		}
 
 		/// <summary>
