@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.7] - 2022-05-30
+
+### Fixed
+
+- Fixed missing static method for average calculations with vectors.
+
 ## [0.1.6] - 2022-05-30
 
 ### Added

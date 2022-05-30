@@ -19,10 +19,9 @@ namespace Foundation.Extensions
 		/// <summary>
 		/// Returns the average vector of a list of vectors.
 		/// </summary>
-		/// <param name="vector3"></param>
 		/// <param name="vectors">List of vectors to calculate average from.</param>
 		/// <returns>Returns average as a Vector3.</returns>
-		public static Vector3 Average(this Vector3 vector3, List<Vector3> vectors)
+		public static Vector3 Average(List<Vector3> vectors)
 		{
 			Vector3 average = Vector3.zero;
 
@@ -31,7 +30,18 @@ namespace Foundation.Extensions
 				average += vectors[i];
 			}
 
-			return average/vectors.Count;
+			return average / vectors.Count;
+		}
+
+		/// <summary>
+		/// Returns the average vector of a list of vectors.
+		/// </summary>
+		/// <param name="vector3"></param>
+		/// <param name="vectors">List of vectors to calculate average from.</param>
+		/// <returns>Returns average as a Vector3.</returns>
+		public static Vector3 Average(this Vector3 vector3, List<Vector3> vectors)
+		{
+			return Average(vectors);
 		}
 		#endregion
 	}
