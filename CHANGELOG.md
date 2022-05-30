@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2022-05-30
+
+### Added
+
+- Added Vector2 and Vector3 extensions get average of list of vectors.
+
 ## [0.1.5] - 2022-05-25
 
 ### Added

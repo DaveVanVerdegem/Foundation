@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Foundation.Extensions
@@ -25,6 +26,24 @@ namespace Foundation.Extensions
 		public static Vector3 ToVector3Top(this Vector2 vector2, float y = 0)
 		{
 			return new Vector3(vector2.x, y, vector2.y);
+		}
+
+		/// <summary>
+		/// Returns the average vector of a list of vectors.
+		/// </summary>
+		/// <param name="vector3"></param>
+		/// <param name="vectors">List of vectors to calculate average from.</param>
+		/// <returns>Returns average as a Vector2.</returns>
+		public static Vector2 Average(this Vector2 vector3, List<Vector2> vectors)
+		{
+			Vector2 average = Vector2.zero;
+
+			for (int i = 0; i < vectors.Count; i++)
+			{
+				average += vectors[i];
+			}
+
+			return average / vectors.Count;
 		}
 		#endregion
 	} 
