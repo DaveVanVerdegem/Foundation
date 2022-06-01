@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Foundation.Extensions
 {
 	public static class IntExtensions
@@ -12,6 +14,17 @@ namespace Foundation.Extensions
 		public static int Modulo(this int integer, int modulo)
 		{
 			return ((integer % modulo) + modulo) % modulo;
+		}
+
+		/// <summary>
+		/// Randomizes the sign of this int.
+		/// </summary>
+		/// <param name="value">Int to give randomized sign.</param>
+		/// <param name="negativeProbability">Probability to get negative sign.</param>
+		/// <returns>Returns int with random sign.</returns>
+		public static int RandomizedSign(this int value, float negativeProbability = 0.5f)
+		{
+			return Random.value < negativeProbability ? -value : value;
 		}
 		#endregion
 	} 

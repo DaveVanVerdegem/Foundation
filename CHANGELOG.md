@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.8] - 2022-06-01
+
+### Added
+
+- Added Vector2 and Vector3 extensions to adjust x, y or z-values.
+- Added Vector2 and Vector3 extensions to get direction to position.
+- Added Vector3 extension to flatten a Vector3.
+- Added Vector3 extension to get a flat distance.
+- Added Vector3 extensions to get the nearest points on an axis or line direction.
+- Added Transform extension to look at position around the Y-axis.
+- Added Shuffle modifier List extension.
+- Added Int extension to randomize its sign.
+
+### Changed
+
+- Added exceptions to Random List extensions.
+
 ## [0.1.7] - 2022-05-30
 
 ### Fixed

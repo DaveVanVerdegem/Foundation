@@ -8,7 +8,9 @@ namespace Foundation.Maths
     {
         #region Angles
         public static float GetAngle(float x, float y)
-           => Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        {
+            return Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        }
         #endregion
     }
 }
