@@ -26,6 +26,11 @@ namespace Foundation.Extensions
 		{
 			return 1f - value;
 		}
+
+		public static int Sign(this float value)
+		{
+			return value < 0 ? -1 : 1;
+		}
 		#endregion
 	} 
 }
