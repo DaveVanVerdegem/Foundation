@@ -11,21 +11,23 @@ namespace Foundation.Grids.Hexagonal
 	public class Hexagon : IEquatable<Hexagon>
 	{
 		#region Properties
+		public float Size => _size;
+
 		public int Q { get; }
 		public int R { get; }
 		public int S { get; }
 
 		public float Width
-			=> Mathf.Sqrt(3) * _size;
+			=> Mathf.Sqrt(3) * Size;
 
 		public float Height
-			=> 2 * _size;
+			=> 2 * Size;
 
 		public HexagonTile HexagonTile { get; set; }
 		#endregion
 
 		#region Fields
-		private readonly float _size = 1f;
+		protected float _size = 1f;
 		#endregion
 
 		#region Constructors
@@ -121,8 +123,8 @@ namespace Foundation.Grids.Hexagonal
 		#region Position Conversion
 		public Vector3 ToWorldPosition()
 		{
-			float x = _size * Mathf.Sqrt(3) * Q + Mathf.Sqrt(3) / 2 * R;
-			float y = _size * 3 / 2 * R;
+			float x = Size * Mathf.Sqrt(3) * Q + Mathf.Sqrt(3) / 2 * R;
+			float y = Size * 3 / 2 * R;
 
 			return new Vector3(x, 0, y);
 		}

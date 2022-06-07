@@ -43,10 +43,28 @@ namespace Foundation.Grids.Hexagonal
 		{
 			foreach (Hexagon hexagon in grid.Hexagons)
 			{
-				HexagonTile tile = Object.Instantiate(hexagonPrefab, parent.position + hexagon.ToWorldPosition(), Quaternion.identity, parent);
+				HexagonTile tile = UnityEngine.Object.Instantiate(hexagonPrefab, parent.position + hexagon.ToWorldPosition(), Quaternion.identity, parent);
 				tile.Hexagon = hexagon;
 				hexagon.HexagonTile = tile;
 			}
+		}
+		#endregion
+
+		#region Methods
+		public bool RemoveTile(Hexagon hexagon)
+		{
+			if (hexagon is null) return false;
+			if (!_hexagons.Contains(hexagon)) return false;
+
+			_hexagons.Remove(hexagon);
+
+			return true;
+		}
+
+		public void RemoveTiles(List<Hexagon> hexagons)
+		{
+			foreach(Hexagon hexagon in hexagons)
+				RemoveTile(hexagon);
 		}
 		#endregion
 	}
