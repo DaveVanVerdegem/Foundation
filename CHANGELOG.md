@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.9] - 2022-06-07
+
+### Added
+
+- Added methods to remove Hexagon tiles from HexagonGrid.
+- Added float extension to detect its sign.
+
+### Changed
+
+- Made size property of Hexagon public.
+
 ## [0.1.8] - 2022-06-01
 
 ### Added
