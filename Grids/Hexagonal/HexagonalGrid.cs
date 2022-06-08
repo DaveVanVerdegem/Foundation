@@ -51,6 +51,11 @@ namespace Foundation.Grids.Hexagonal
 		#endregion
 
 		#region Methods
+		/// <summary>
+		/// Removes a hexagon from the grid.
+		/// </summary>
+		/// <param name="hexagon">Hexagon tile to remove.</param>
+		/// <returns>Returns true if the hexagon was found and succesfully removed.</returns>
 		public bool RemoveTile(Hexagon hexagon)
 		{
 			if (hexagon is null) return false;
@@ -61,6 +66,10 @@ namespace Foundation.Grids.Hexagonal
 			return true;
 		}
 
+		/// <summary>
+		/// Removes a list of hexagons from the grid.
+		/// </summary>
+		/// <param name="hexagons">List of hexagons to remove.</param>
 		public void RemoveTiles(List<Hexagon> hexagons)
 		{
 			foreach(Hexagon hexagon in hexagons)

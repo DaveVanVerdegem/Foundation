@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added Toolbar method to spawn AxialGizmo helper.
+
+### Changed
+
+- Moved CreateFacade method to a new Toolbar class to bundle all toolbar methods.
+
 ## [0.1.9] - 2022-06-07
 
 ### Added
