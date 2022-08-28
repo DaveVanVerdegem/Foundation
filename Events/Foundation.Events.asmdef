@@ -1,0 +1,16 @@
+{
+    "name": "Foundation.Events",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3487f2d7026608f45b6cb94a995ce3df"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
