@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Foundation.Extensions
 {
@@ -63,7 +65,7 @@ namespace Foundation.Extensions
 		/// <param name="list">List to shuffle.</param>
 		public static void Shuffle<T>(this IList<T> list)
 		{
-			Random rng = new Random();
+			System.Random rng = new System.Random();
 			int n = list.Count;
 			while (n > 1)
 			{
@@ -73,6 +75,17 @@ namespace Foundation.Extensions
 				list[k] = list[n];
 				list[n] = value;
 			}
+		}
+
+		/// <summary>
+		/// Orders the given list of MonoBehaviours by distance.
+		/// </summary>
+		/// <param name="list">List to sort.</param>
+		/// <param name="position">Position to calculate distance from.</param>
+		/// <returns>Returns an ordered list, starting with the closest object.</returns>
+		public static List<T> OrderByDistance<T>(this List<T> list, Vector3 position) where T: MonoBehaviour
+		{
+			return list.OrderBy(x => Vector2.Distance(position, x.transform.position)).ToList();
 		}
 	} 
 }

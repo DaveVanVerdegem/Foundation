@@ -48,6 +48,36 @@ namespace Foundation.Extensions
 		{
 			return new Vector3(vector3.x, 0f, vector3.z);
 		}
+
+		/// <summary>
+		/// Rounds the given Vector to a whole number.
+		/// </summary>
+		/// <param name="vector3">Vector3 to round.</param>
+		/// <returns>Returns a Vector3 consisting of whole numbers.</returns>
+		public static Vector3 Round(this Vector3 vector3)
+		{
+			return new Vector3(Mathf.Round(vector3.x), Mathf.Round(vector3.y), Mathf.Round(vector3.z));
+		}
+
+		/// <summary>
+		/// Floors the given Vector to a whole number.
+		/// </summary>
+		/// <param name="vector3">Vector3 to floor.</param>
+		/// <returns>Returns a Vector3 consisting of whole numbers.</returns>
+		public static Vector3 Floor(this Vector3 vector3)
+		{
+			return new Vector3(Mathf.Floor(vector3.x), Mathf.Floor(vector3.y), Mathf.Floor(vector3.z));
+		}
+
+		/// <summary>
+		/// Ceils the given Vector to a whole number.
+		/// </summary>
+		/// <param name="vector3">Vector3 to ceil.</param>
+		/// <returns>Returns a Vector3 consisting of whole numbers.</returns>
+		public static Vector3 Ceil(this Vector3 vector3)
+		{
+			return new Vector3(Mathf.Ceil(vector3.x), Mathf.Ceil(vector3.y), Mathf.Ceil(vector3.z));
+		}
 		#endregion
 
 		#region Convertors
