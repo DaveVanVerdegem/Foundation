@@ -7,12 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added List extension to return a list of objects ordered by distance.
+- Added Vector3 Extensions to round Vector3's.
+- Added Vector2 Extensions to round Vector2's.
+
 ## [0.2.0] - 2022-08-28
 
 ### Added
 
 - Added Toolbar method to spawn AxialGizmo helper.
-- Added Extendable Global Event system.
+- Added Extendable Global Event system (see https://crodrigues.com/c-extending-enums-on-net/).
 
 ### Changed
 

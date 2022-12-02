@@ -60,6 +60,16 @@ namespace Foundation.Extensions
 		}
 
 		/// <summary>
+		/// Rounds the given Vector to a Vector3Int.
+		/// </summary>
+		/// <param name="vector3">Vector3 to round.</param>
+		/// <returns>Returns a Vector3Int.</returns>
+		public static Vector3Int RoundToInt(this Vector3 vector3)
+		{
+			return new Vector3Int(Mathf.RoundToInt(vector3.x), Mathf.RoundToInt(vector3.y), Mathf.RoundToInt(vector3.z));
+		}
+
+		/// <summary>
 		/// Floors the given Vector to a whole number.
 		/// </summary>
 		/// <param name="vector3">Vector3 to floor.</param>
