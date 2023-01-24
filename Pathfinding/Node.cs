@@ -19,7 +19,7 @@ namespace Foundation.Pathfinding
 		#region Fields
 		protected List<Node> _neighbours = new List<Node>();
 
-		public Node parent;
+		public Node Parent;
 		#endregion
 	}
 }

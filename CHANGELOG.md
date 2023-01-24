@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Vector3 Extensions to round Vector3's.
 - Added Vector2 Extensions to round Vector2's.
 
+### Fixed
+
+- Added null-check to == operator in Hexagon.
+- Added clean up in Pathfinder to clear parents.
+
 ## [0.2.0] - 2022-08-28
 
 ### Added

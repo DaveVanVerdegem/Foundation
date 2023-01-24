@@ -55,7 +55,7 @@ namespace Foundation.Pathfinding
 
 					if (currentNode == _goal)
 					{
-						currentNode.parent = bestNode;
+						currentNode.Parent = bestNode;
 						PathFound = true;
 						Path = ConstructPath(currentNode);
 						return true;
@@ -71,7 +71,7 @@ namespace Foundation.Pathfinding
 
 					currentNode.G = g;
 					currentNode.H = h;
-					currentNode.parent = bestNode;
+					currentNode.Parent = bestNode;
 
 					if (!_openList.Contains(currentNode))
 						_openList.Add(currentNode);
@@ -111,13 +111,18 @@ namespace Foundation.Pathfinding
 			List<Node> path = new List<Node>() { destination };
 
 			Node current = destination;
-			while (current.parent != null)
+			while (current.Parent != null)
 			{
-				current = current.parent;
+				current = current.Parent;
 				path.Add(current);
 			}
 
 			path.Reverse();
+
+			// Clean up references from calculation.
+			foreach (Node node in path)
+				node.Parent = null;
+
 			return path;
 		}
 		#endregion

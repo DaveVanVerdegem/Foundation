@@ -87,5 +87,24 @@ namespace Foundation.Extensions
 		{
 			return list.OrderBy(x => Vector2.Distance(position, x.transform.position)).ToList();
 		}
+
+		/// <summary>
+		/// Shifts the elements of a list in the given shift amount.
+		/// </summary>
+		/// <param name="list">List to shift.</param>
+		/// <param name="shift">Amount to shift the list. Positive moves the elements forward, negative moves them backwards.</param>
+		/// <returns>Returns the shifted list.</returns>
+		public static List<T> Shift<T>(this List<T> list, int shift)
+		{
+			List<T> shiftedList = new List<T>();
+
+			for (int i = 0; i < list.Count; i++)
+			{
+
+				shiftedList.Add(list[(i - shift).Modulo(list.Count)]);
+			}
+
+			return shiftedList;
+		}
 	} 
 }

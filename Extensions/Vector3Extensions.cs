@@ -95,7 +95,7 @@ namespace Foundation.Extensions
 		/// Converts a Vector3 to a Vector2 variable.
 		/// </summary>
 		/// <param name="vector3">Value to convert.</param>
-		/// <returns>Returns Vector3 value.</returns>
+		/// <returns>Returns Vector2 value.</returns>
 		public static Vector2 ToVector2(this Vector3 vector3)
 		{
 			return new Vector2(vector3.x, vector3.y);
@@ -171,7 +171,6 @@ namespace Foundation.Extensions
 		// lineDirection - unit vector in direction of line
 		// pointOnLine - a point on the line (allowing us to define an actual line in space)
 		// point - the point to find nearest on line for
-
 
 		/// <summary>
 		/// Returns the nearest point on a vector line.

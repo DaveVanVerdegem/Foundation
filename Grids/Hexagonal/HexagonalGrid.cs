@@ -6,11 +6,11 @@ namespace Foundation.Grids.Hexagonal
 	public class HexagonalGrid
 	{
 		#region Properties
-		public List<Hexagon> Hexagons => _hexagons;
+		public Dictionary<HexagonCoordinates, Hexagon> Hexagons => _hexagons;
 		#endregion
 
 		#region Fields
-		private List<Hexagon> _hexagons = new List<Hexagon>();
+		private Dictionary<HexagonCoordinates, Hexagon> _hexagons = new Dictionary<HexagonCoordinates, Hexagon>();
 		#endregion
 
 		#region Constructors
@@ -23,14 +23,14 @@ namespace Foundation.Grids.Hexagonal
 
 				for (int r = r1; r <= r2; r++)
 				{
-					_hexagons.Add(new Hexagon(q, r, -q - r));
+					_hexagons.Add(new HexagonCoordinates(q, r, -q - r), null);
 				}
 			}
 		}
 		#endregion
 
 		#region Static Methods
-		public static HexagonalGrid Instantiate(int radius, Transform parent, HexagonTile hexagonPrefab)
+		public static HexagonalGrid Instantiate(int radius, Transform parent, Hexagon hexagonPrefab)
 		{
 			HexagonalGrid hexagonalGrid = new HexagonalGrid(radius);
 
@@ -39,29 +39,53 @@ namespace Foundation.Grids.Hexagonal
 			return hexagonalGrid;
 		}
 
-		private static void PlaceTiles(HexagonalGrid grid, HexagonTile hexagonPrefab, Transform parent)
+		private static void PlaceTiles(HexagonalGrid grid, Hexagon hexagonPrefab, Transform parent)
 		{
-			foreach (Hexagon hexagon in grid.Hexagons)
+			List<Hexagon> hexagons = new List<Hexagon>();
+
+			foreach(KeyValuePair<HexagonCoordinates, Hexagon> pair in grid._hexagons)
 			{
-				HexagonTile tile = UnityEngine.Object.Instantiate(hexagonPrefab, parent.position + hexagon.ToWorldPosition(), Quaternion.identity, parent);
-				tile.Hexagon = hexagon;
-				hexagon.HexagonTile = tile;
+				Hexagon hexagon = Object.Instantiate(hexagonPrefab, parent.position + pair.Key.ToWorldPosition(hexagonPrefab.Size), Quaternion.identity, parent);
+				hexagon.SetCoordinates(pair.Key);
+
+				hexagons.Add(hexagon);
+				//grid.Add(hexagon);
+			}
+
+			foreach (Hexagon hexagon in hexagons)
+			{
+				grid.Add(hexagon);
 			}
 		}
 		#endregion
 
 		#region Methods
+		public Hexagon GetHexagon(HexagonCoordinates coordinates) => _hexagons[coordinates];
+
+		public bool Add(Hexagon hexagon, HexagonCoordinates coordinates)
+		{
+			if (_hexagons.ContainsKey(coordinates))
+			{
+				_hexagons[coordinates] = hexagon;
+				return true;
+			}
+
+			return false;
+		}
+
+		public bool Add(Hexagon hexagon) => Add(hexagon, hexagon.Coordinates);
+
 		/// <summary>
 		/// Removes a hexagon from the grid.
 		/// </summary>
 		/// <param name="hexagon">Hexagon tile to remove.</param>
 		/// <returns>Returns true if the hexagon was found and succesfully removed.</returns>
-		public bool RemoveTile(Hexagon hexagon)
+		public bool Remove(Hexagon hexagon)
 		{
 			if (hexagon is null) return false;
-			if (!_hexagons.Contains(hexagon)) return false;
+			if(!_hexagons.ContainsValue(hexagon)) return false;
 
-			_hexagons.Remove(hexagon);
+			_hexagons[hexagon.Coordinates] = null;
 
 			return true;
 		}
@@ -70,10 +94,10 @@ namespace Foundation.Grids.Hexagonal
 		/// Removes a list of hexagons from the grid.
 		/// </summary>
 		/// <param name="hexagons">List of hexagons to remove.</param>
-		public void RemoveTiles(List<Hexagon> hexagons)
+		public void Remove(List<Hexagon> hexagons)
 		{
 			foreach(Hexagon hexagon in hexagons)
-				RemoveTile(hexagon);
+				Remove(hexagon);
 		}
 		#endregion
 	}
