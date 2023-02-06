@@ -7,16 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2023-01-24
+
 ### Added
 
 - Added List extension to return a list of objects ordered by distance.
+- Added List extension to shift a list of objects by a given amount.
 - Added Vector3 Extensions to round Vector3's.
 - Added Vector2 Extensions to round Vector2's.
+- Added Hexagon Coordinates class.
+
+### Changed
+
+- Moved Hexagon Coordinates and relevant methods to their own class.
 
 ### Fixed
 
 - Added null-check to == operator in Hexagon.
 - Added clean up in Pathfinder to clear parents.
+- Updated Maths.GetAngle() to return a value between 0-360.
+- Corrected some typing errors.
 
 ## [0.2.0] - 2022-08-28
 
