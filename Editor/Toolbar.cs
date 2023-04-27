@@ -17,13 +17,34 @@ namespace Foundation.Editor
 		}
 		#endregion
 
+		#region Setup
+		[MenuItem("Foundation/Setup/Setup Project", false, 10)]
+		public static void SetupProject()
+		{
+			LoadNewManifestAsync();
+			CreateDefaultFolders();
+		}
+
+		[MenuItem("Foundation/Setup/Load Manifest", false, 120)]
+		static async void LoadNewManifestAsync()
+		{
+			await Packages.LoadNewManifest("2cc583387cc70e6bf857e63f2e825e22");
+		}
+
+		[MenuItem("Foundation/Setup/Create Default Folders", false, 120)]
+		public static void CreateDefaultFolders()
+		{
+			FileHandler.CreateFolders("Scenes", "Code", "Materials", "Prefabs");
+		}
+		#endregion
+
 		#region Patterns
 		[MenuItem("Foundation/Patterns/Facade")]
 		private static void CreateFacade()
 		{
-			string path = "Assets/Facade.cs";
+			string path = "Facade.cs";
 
-			CreateClass.CreateFile(path, _facadeBody);
+			FileHandler.CreateFile(path, _facadeBody);
 		}
 
 		[MenuItem("Assets/Create/Foundation/Patterns/Facade", false, 1)]
@@ -43,7 +64,7 @@ namespace Foundation.Editor
 
 			Object prefab = Resources.Load<Object>(path);
 			Selection.activeObject = PrefabUtility.InstantiatePrefab(prefab);
-		} 
+		}
 		#endregion
 	} 
 }
