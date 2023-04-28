@@ -2,7 +2,8 @@
     "name": "Foundation.Helpers",
     "rootNamespace": "",
     "references": [
-        "GUID:6312f2ce1e3a331479958c8c765c20ed"
+        "GUID:6312f2ce1e3a331479958c8c765c20ed",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -100,6 +100,16 @@ namespace Foundation.Extensions
 		{
 			return new Vector2(vector3.x, vector3.y);
 		}
+
+		/// <summary>
+		/// Converts a Vector3 to a Vector2 variable where the y-axis is discarded.
+		/// </summary>
+		/// <param name="vector3">Value to convert.</param>
+		/// <returns>Returns a Vector2 value from the x and z values of the given Vector3.</returns>
+		public static Vector2 ToVector2FromTop(this Vector3 vector3)
+		{
+			return new Vector2(vector3.x, vector3.z);
+		}
 		#endregion
 
 		#region Methods
