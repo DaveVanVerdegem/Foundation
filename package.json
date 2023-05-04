@@ -1,6 +1,6 @@
 {
     "name": "com.davevanverdegem.foundation",
-    "version": "0.2.2",
+    "version": "0.2.3-alpha.1",
     "displayName": "Foundation",
     "description": "Foundation provides a base set of classes to kickstart new projects.",
     "author": {
