@@ -121,7 +121,13 @@ namespace Foundation.Pathfinding
 
 			// Clean up references from calculation.
 			foreach (Node node in path)
-				node.Parent = null;
+				node.Reset();
+
+			foreach (Node node in _openList)
+				node.Reset();
+
+			foreach (Node node in _closedList)
+				node.Reset();
 
 			return path;
 		}

@@ -31,6 +31,16 @@ namespace Foundation.Extensions
 			// Rotate Object
 			transform.rotation = Quaternion.Euler(0, 0, AngleDegrees);
 		}
+
+		/// <summary>
+		/// Rotates the transform around the Z-axis to look at the given position. Useful in 2D space.
+		/// </summary>
+		/// <param name="transform">Transform to rotate.</param>
+		/// <param name="position">Position to look at.</param>
+		public static void LookAtZ(Transform transform, Vector2 position)
+		{
+			LookAtZ(transform, position.ToVector3());
+		}
 		#endregion
 	} 
 }

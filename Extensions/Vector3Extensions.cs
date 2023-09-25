@@ -88,6 +88,42 @@ namespace Foundation.Extensions
 		{
 			return new Vector3(Mathf.Ceil(vector3.x), Mathf.Ceil(vector3.y), Mathf.Ceil(vector3.z));
 		}
+
+		/// <summary>
+		/// Returns a random Vector3 between the given minimum and maximum values.
+		/// </summary>
+		/// <param name="minimum">Minimum inclusive value possible.</param>
+		/// <param name="maximum">Maximum inclusive value possible.</param>
+		/// <returns>Returns a Vector3 randomized between the given values.</returns>
+		public static Vector3 Random(Vector3 minimum, Vector3 maximum)
+		{
+			return new Vector3(
+				UnityEngine.Random.Range(minimum.x, maximum.x), 
+				UnityEngine.Random.Range(minimum.y, maximum.y), 
+				UnityEngine.Random.Range(minimum.z, maximum.z));
+		}
+
+		/// <summary>
+		/// Returns a random Vector3 between 0 and 1.
+		/// </summary>
+		/// <returns>Returns a random Vector3 between 0 and 1.</returns>
+		public static Vector3 Random()
+		{
+			return Random(Vector3.zero, Vector3.one);
+		}
+
+		/// <summary>
+		/// Returns a random Vector3 between the given minimum and maximum values with a uniform range.
+		/// </summary>
+		/// <param name="minimum">Minimum value.</param>
+		/// <param name="maximum">Maximum value.</param>
+		/// <returns>Returns a random Vector3 where each value is the same.</returns>
+		public static Vector3 RandomUniform(float minimum, float maximum)
+		{
+			float random = UnityEngine.Random.Range(minimum, maximum);
+
+			return Vector3.one * random;
+		}
 		#endregion
 
 		#region Convertors

@@ -5,11 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.3-alpha.2] - 2023-05-04
+## [0.2.3-alpha.3] - 2023-09-25
 
 ### Added
 
-- Added Transform extension to look at position around the Z-axis.
+- Added Transform extensions to look at position around the Z-axis.
+- Added Vector3 Extensions to generate random Vector3's.
+
+### Fixed
+
+- Pathfinder now properly resets traversed nodes.
 
 ## [0.2.2] - 2023-04-28
 

@@ -14,12 +14,21 @@ namespace Foundation.Pathfinding
 		public float F { get { return (G + H) * Cost; }}
 		public float G;
 		public float H;
+
+		public Node Parent;
 		#endregion
 
 		#region Fields
 		protected List<Node> _neighbours = new List<Node>();
+		#endregion
 
-		public Node Parent;
+		#region Methods
+		public void Reset()
+		{
+			Parent = null;
+			G = 0f;
+			H = 0f;
+		}
 		#endregion
 	}
 }
