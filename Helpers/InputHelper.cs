@@ -1,13 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
+#if ENABLE_INPUT_SYSTEM
+    // New input system backends are enabled.
+	using UnityEngine.InputSystem;
+#endif
+
 
 namespace Foundation.Helpers
 {
 	[AddComponentMenu("Foundation/Input Helper")]
 	public class InputHelper : MonoBehaviour
 	{
+#if ENABLE_INPUT_SYSTEM
 		#region Enums
 		public enum ControlScheme
 		{
@@ -20,13 +25,12 @@ namespace Foundation.Helpers
 		#endregion
 
 		#region Inspector Fields
+
+		// New input system backends are enabled.
 		[SerializeField] private PlayerInput _playerInput = null;
 
 		[Header("Events")]
 		public UnityEvent<ControlScheme> OnControlSchemeChanged = new UnityEvent<ControlScheme>();
-		#endregion
-
-		#region Properties
 		#endregion
 
 		#region Fields
@@ -82,5 +86,6 @@ namespace Foundation.Helpers
 			};
 		}
 		#endregion
+#endif
 	}
 }
