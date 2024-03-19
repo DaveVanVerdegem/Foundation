@@ -59,7 +59,7 @@ namespace Foundation.Events
 			return obj.GetHashCode();
 		}
 
-		public string ToString() => Value.ToString();
+		public override string ToString() => Value.ToString();
 		#endregion
 
 	}

@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.3-alpha.4] - 2024-01-27
+## [0.2.3-alpha.4] - 2024-03-19
 
 ### Added
 
-- 
+- Added SimpleSingleton class that doesn't persist through scenes.
+- Added several classes to handle loading in scenes.
+- Added LoadingScreen class to show loading screens.
 
 ### Fixed
 
