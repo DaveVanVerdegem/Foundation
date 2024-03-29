@@ -7,7 +7,7 @@ using UnityEngine.Events;
 #endif
 
 
-namespace Foundation.Helpers
+namespace Foundation.Input
 {
 	[AddComponentMenu("Foundation/Input Helper")]
 	public class InputHelper : MonoBehaviour

@@ -1,8 +1,10 @@
 {
-    "name": "Foundation.Helpers",
+    "name": "Foundation.Input",
     "rootNamespace": "",
     "references": [
-        "GUID:6312f2ce1e3a331479958c8c765c20ed"
+        "GUID:3487f2d7026608f45b6cb94a995ce3df",
+        "GUID:372d6e3d23a925244a1ce7f418f444d1",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -85,7 +85,18 @@ namespace Foundation.Extensions
 		/// <returns>Returns an ordered list, starting with the closest object.</returns>
 		public static List<T> OrderByDistance<T>(this List<T> list, Vector3 position) where T: MonoBehaviour
 		{
-			return list.OrderBy(x => Vector2.Distance(position, x.transform.position)).ToList();
+			return list.OrderBy(x => Vector3.Distance(position, x.transform.position)).ToList();
+		}
+
+		/// <summary>
+		/// Orders the given list of MonoBehaviours by distance and returns the closest object.
+		/// </summary>
+		/// <param name="list">List to sort through.</param>
+		/// <param name="position">Position to calculate distance from.</param>
+		/// <returns>Returns the closest MonoBehaviour.</returns>
+		public static T GetClosest<T>(this List<T> list, Vector3 position) where T : MonoBehaviour
+		{
+			return list.OrderBy(x => Vector3.Distance(position, x.transform.position)).FirstOrDefault();
 		}
 
 		/// <summary>

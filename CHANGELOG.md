@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added List extension to return the closest object from a list.
+- Added Rumble class to manage rumbling of a controller.
+- Added a Timer class to keep track of timed events.
+
 ## [0.2.3-alpha.4] - 2024-03-19
 
 ### Added
