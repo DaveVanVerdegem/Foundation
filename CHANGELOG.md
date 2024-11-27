@@ -5,36 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Added
-
-- Added List extension to return the closest object from a list.
-- Added Rumble class to manage rumbling of a controller.
-- Added a Timer class to keep track of timed events.
-
-## [0.2.3-alpha.4] - 2024-03-19
-
-### Added
-
-- Added SimpleSingleton class that doesn't persist through scenes.
-- Added several classes to handle loading in scenes.
-- Added LoadingScreen class to show loading screens.
-
-### Fixed
-
-- Added preprocessor check for new input system to InputHelper.
-
-## [0.2.3-alpha.3] - 2023-09-25
+## [0.2.3] - 2024-11-27
 
 ### Added
 
 - Added Transform extensions to look at position around the Z-axis.
 - Added Vector3 Extensions to generate random Vector3's.
+- Added SimpleSingleton class that doesn't persist through scenes.
+- Added several classes to handle loading in scenes.
+- Added LoadingScreen class to show loading screens.
+- Added List extension to return the closest object from a list.
+- Added Rumble class to manage rumbling of a controller.
+- Added a Timer class to keep track of timed events.
 
 ### Fixed
 
 - Pathfinder now properly resets traversed nodes.
+- Added preprocessor check for new input system to InputHelper.
 
 ## [0.2.2] - 2023-04-28
 

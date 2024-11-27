@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NaughtyAttributes;
+//using NaughtyAttributes;
 
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -17,7 +17,7 @@ namespace Foundation.SceneManagement
 		#region Inspector Fields
 		[SerializeField] public bool _useLoadingScreen = true;
 
-		[EnableIf("_useLoadingScreen")]
+		//[EnableIf("_useLoadingScreen")]
 		[SerializeField] private LoadingScreen _loadingScreen = null;
 		#endregion
 

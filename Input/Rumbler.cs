@@ -1,12 +1,16 @@
 using Foundation.Helpers;
 using Foundation.Patterns;
 using UnityEngine;
-using UnityEngine.InputSystem;
+#if ENABLE_INPUT_SYSTEM
+    // New input system backends are enabled.
+	using UnityEngine.InputSystem;
+#endif
 
 namespace Foundation.Input
 {
 	public class Rumbler: Singleton<Rumbler>
 	{
+#if ENABLE_INPUT_SYSTEM
 		#region Fields
 		/// <summary>
 		/// Timer to keep track of the rumble duration.
@@ -52,5 +56,6 @@ namespace Foundation.Input
 			Gamepad.current.SetMotorSpeeds(0, 0);
 		}
 		#endregion
+#endif
 	}
 }
