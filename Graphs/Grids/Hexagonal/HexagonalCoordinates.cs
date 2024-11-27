@@ -7,9 +7,9 @@ namespace Foundation.Graphs.Grids.Hexagonal
 	public class HexagonalCoordinates : Coordinates
 	{
 		#region Properties
-		public int Q;
-		public int R;
-		public int S;
+		public readonly int Q;
+		public readonly int R;
+		public readonly int S;
 		#endregion
 
 		#region Static Properties
@@ -43,8 +43,8 @@ namespace Foundation.Graphs.Grids.Hexagonal
 		public static bool operator !=(HexagonalCoordinates a, HexagonalCoordinates b)
 			=> !(a == b);
 
-		public bool Equals(HexagonalCoordinates other)
-			=> this == other;
+		//public bool Equals(HexagonalCoordinates other)
+		//	=> this == other;
 
 		public override bool Equals(object o)
 		{
