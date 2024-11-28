@@ -50,7 +50,6 @@ namespace Foundation.Graphs.Grids.Hexagonal
 				hexagon.SetCoordinates(pair.Key);
 
 				hexagons.Add(hexagon);
-				//grid.Add(hexagon);
 			}
 
 			foreach (HexagonalCell hexagon in hexagons)

@@ -1,3 +1,4 @@
+using Foundation.Graphs.Grids.Hexagonal;
 using Foundation.Helpers;
 using System;
 using UnityEngine;
@@ -38,13 +39,17 @@ namespace Foundation.Graphs.Grids.Orthogonal
 		public static bool operator !=(OrthogonalCoordinates a, OrthogonalCoordinates b)
 			=> !(a == b);
 
+		public bool Equals(OrthogonalCoordinates other)
+			=> this == other;
+
 		public override bool Equals(object o)
 		{
 			if (o == null)
 				return false;
 
-			return Equals(o);
+			return Equals(o as OrthogonalCoordinates);
 		}
+
 
 		public override int GetHashCode()
 		{

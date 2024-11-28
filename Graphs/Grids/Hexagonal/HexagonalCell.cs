@@ -10,8 +10,11 @@ namespace Foundation.Graphs.Grids.Hexagonal
 	[Serializable]
 	public class HexagonalCell : Cell<HexagonalCoordinates>
 	{
+		#region Inspector Fields
+		[SerializeField] private float _size = 1f;
+		#endregion
+
 		#region Fields
-		private float _size = 1f;
 		private HexagonalCoordinates _coordinates = HexagonalCoordinates.Zero;
 		#endregion
 

@@ -43,8 +43,8 @@ namespace Foundation.Graphs.Grids.Hexagonal
 		public static bool operator !=(HexagonalCoordinates a, HexagonalCoordinates b)
 			=> !(a == b);
 
-		//public bool Equals(HexagonalCoordinates other)
-		//	=> this == other;
+		public bool Equals(HexagonalCoordinates other)
+			=> this == other;
 
 		public override bool Equals(object o)
 		{

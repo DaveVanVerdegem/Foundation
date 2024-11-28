@@ -28,7 +28,7 @@ namespace Foundation.Graphs.Grids
 			if (o == null)
 				return false;
 
-			return Equals(o);
+			return Equals(o as Coordinates);
 		}
 
 		public abstract override int GetHashCode();

@@ -4,8 +4,11 @@ namespace Foundation.Graphs.Grids.Orthogonal
 {
 	public class OrthogonalCell : Cell<OrthogonalCoordinates>
 	{
+		#region Inspector Fields
+		[SerializeField] private Vector2 _size = Vector2.one;
+		#endregion
+
 		#region Fields
-		private Vector2 _size;
 		private OrthogonalCoordinates _coordinates = OrthogonalCoordinates.Zero;
 		#endregion
 
@@ -21,12 +24,6 @@ namespace Foundation.Graphs.Grids.Orthogonal
 		public override void Initialize(OrthogonalCoordinates coordinates)
 		{
 			_coordinates = coordinates;
-		}
-
-		public void Initialize(OrthogonalCoordinates coordinates, Vector2 size)
-		{
-			_coordinates = coordinates;
-			_size = size;
 		}
 		#endregion
 

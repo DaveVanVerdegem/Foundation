@@ -1,5 +1,3 @@
-using Foundation.Graphs.Grids.Hexagonal;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,18 +35,22 @@ namespace Foundation.Graphs.Grids.Orthogonal
 		{
 			OrthogonalGrid grid = new OrthogonalGrid(size);
 
-			PlaceCells(grid, cellPrefab, parent);
+			PlaceCells(grid, cellPrefab, parent, size);
 
 			return grid;
 		}
 
-		private static void PlaceCells(OrthogonalGrid grid, OrthogonalCell cellPrefab, Transform parent)
+		private static void PlaceCells(OrthogonalGrid grid, OrthogonalCell cellPrefab, Transform parent, Vector2Int size)
 		{
 			List<OrthogonalCell> cells = new List<OrthogonalCell>();
 
+			// Create an offset to center the grid.
+			Vector3 startingPosition = parent.position - (new Vector3(size.x * cellPrefab.Size.x, 0, size.y * cellPrefab.Size.y) * .5f)
+				+ new Vector3(cellPrefab.Size.x * .5f, 0, cellPrefab.Size.y * .5f);
+
 			foreach (KeyValuePair<OrthogonalCoordinates, OrthogonalCell> pair in grid.Cells)
 			{
-				OrthogonalCell cell = Object.Instantiate(cellPrefab, parent.position + pair.Key.ToWorldPosition(cellPrefab.Size), Quaternion.identity, parent);
+				OrthogonalCell cell = Object.Instantiate(cellPrefab, startingPosition + pair.Key.ToWorldPosition(cellPrefab.Size), Quaternion.identity, parent);
 				cell.SetCoordinates(pair.Key);
 
 				cells.Add(cell);
